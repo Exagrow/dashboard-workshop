@@ -1,0 +1,13 @@
+# Secrets. Your API key lives here on your laptop and in Netlify, never in git.
+.env
+.env.*
+!.env.example
+
+# Build output and installed packages
+node_modules/
+dist/
+.netlify/
+
+# OS clutter
+.DS_Store
+Thumbs.db
