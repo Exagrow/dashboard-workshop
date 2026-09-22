@@ -1,8 +1,7 @@
 # Workshop dashboard: instructions for Claude
 
-This repo is a participant's copy of the Exagrow workshop starter, "Building a Live Data
-Quality Dashboard with Claude Code." The person you are working with may never have written
-code. They steer; you build. Follow every rule below.
+This repo is a participant's copy of an Exagrow workshop starter. The person you are working
+with may never have written code. They steer; you build. Follow every rule below.
 
 ## How to work with this person
 
@@ -59,72 +58,18 @@ git checkout dev
 If the fast-forward fails, stop and explain; never merge or reset `prod` to force it. Never
 commit to `prod` directly.
 
-## Secrets: the API key
+## Secrets
 
-The data source needs an API key (an app token). Treat it like a password.
+API keys, tokens and passwords are secrets. Treat every one like a password.
 
-- **Locally** it lives in `.env`, which git ignores. Copy `.env.example` to `.env` and have
-  the person paste the token in themselves. Do not ask them to paste it into chat, and never
-  print it, log it, or echo it back.
-- **On Netlify** it lives in the site's environment variables (Site configuration, then
-  Environment variables), set by the person in the Netlify dashboard.
+- **Locally** a secret lives in `.env`, which git ignores. Copy `.env.example` to `.env` and
+  have the person paste the value in themselves. Do not ask them to paste it into chat, and
+  never print it, log it, or echo it back.
+- **On a hosting service** it lives in that service's environment variable settings, set by
+  the person in its dashboard.
 - **Never in code, never in git, never in the browser.** Anything shipped to the browser can
-  be read by anyone who opens the page, so the key is used only inside a Netlify Function
-  (below), which runs on Netlify's servers.
-- Before every commit, check `git status` and the diff for anything that looks like a key.
-  If a key is ever committed or pushed, stop, tell the person plainly, and help them create a
-  new token and delete the old one. Removing it from the latest commit is not enough.
-
-## The stack
-
-Keep it small and readable. The person should be able to open a file and roughly follow it.
-
-- **Vite** with plain JavaScript (no React, no TypeScript) for the page.
-- **Observable Plot** for charts.
-- **A Netlify Function** in `netlify/functions/` that holds the API key, calls the data API,
-  and returns only the JSON the page needs. The page calls `/.netlify/functions/<name>`.
-- **`netlify.toml`** with the build command (`npm run build`), the publish folder (`dist`) and
-  the functions folder.
-- Run locally with `npx netlify dev`, which serves the page and the functions together and
-  reads `.env`.
-- Node.js LTS must be installed. If `node --version` fails, help the person install it from
-  nodejs.org before anything else.
-- Add a dependency only when it earns its place, and say why.
-
-## Hosting: Netlify
-
-- The person signs up at netlify.com with their GitHub account and imports this repo (Add new
-  project, then Import an existing project).
-- Set the **production branch to `prod`**, and turn on **branch deploys for `dev`**. Then the
-  `dev` branch has its own test URL and `prod` is the real site.
-- After each push, check that the Netlify deploy succeeded and that the change actually works
-  on the deployed URL. A green deploy is not a working site.
-
-## The data: NYC Open Data
-
-- Source: NYC Open Data (data.cityofnewyork.us), which serves NYC Taxi and Limousine
-  Commission (TLC) datasets through the Socrata SODA API. The app token goes in the
-  `X-App-Token` request header.
-- Find datasets with the catalog API, for example
-  `https://api.us.socrata.com/api/catalog/v1?domains=data.cityofnewyork.us&q=taxi`, and
-  confirm with the person which one to use.
-- **Let the API do the heavy lifting.** Use SoQL (`$select`, `$where`, `$group`, `$order`)
-  to ask for counts and summaries, and always set a `$limit`. Never pull a whole dataset into
-  the browser or into a function.
-- Cache results in the function response (a `Cache-Control` header) so a page refresh does
-  not re-query the API.
-- **Do not download TLC's raw trip files** (the parquet files on TLC's CloudFront site). A
-  room of people pulling them at once from one network gets that network blocked. If the
-  API is unavailable, use the mirror link the instructor gives out.
-
-## What the dashboard is for
-
-A data quality dashboard shows the data and how far to trust it, side by side:
-
-- A few headline numbers (KPI tiles) and a chart or two of the trend.
-- **Quality checks**, each named by what it tests: completeness (missing values), validity
-  (values out of range), timeliness (how old the newest record is), consistency and
-  uniqueness. Show each as a count and a rate, not just pass or fail.
-- A table the person can drill into to see example records behind a number.
-- A line at the top of the page that says where the data comes from and how current it is.
-  Keep that line true.
+  be read by anyone who opens the page, so a secret is only ever used by code that runs on a
+  server.
+- Before every commit, check `git status` and the diff for anything that looks like a secret.
+  If one is ever committed or pushed, stop, tell the person plainly, and help them create a
+  new one and revoke the old one. Removing it from the latest commit is not enough.
