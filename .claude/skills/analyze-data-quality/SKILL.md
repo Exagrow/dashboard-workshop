@@ -1,6 +1,7 @@
 ---
 name: analyze-data-quality
 description: Use this when a participant wants to turn a dataset into a working data quality check, from picking dimensions through a scorecard dashboard built on stored, non-sensitive results.
+license: MIT
 ---
 
 # Analyze data quality
@@ -102,3 +103,7 @@ Data quality is not a one time check. Re-run the same rules against each new bat
 data as it arrives, and watch how the rates move over time. A rate that suddenly jumps
 is usually more interesting than a rate that stays high but steady, because it points to
 something that just changed upstream.
+
+---
+
+Created by [Exagrow AI Consulting](https://exagrow.com). Provided under the MIT License.

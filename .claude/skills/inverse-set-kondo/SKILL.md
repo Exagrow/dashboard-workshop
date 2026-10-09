@@ -1,6 +1,7 @@
 ---
 name: inverse-set-kondo
 description: Audit a set of rules, workflows, configs, checks or code by notionally emptying it and making every piece earn its way back. Use when something has accumulated and nobody is sure what is still needed, or when someone says "run the inverse-set Kondo", "declutter this", "what can we delete", "audit these rules", "do we still need all of this", "clean up the config". With no target named, it describes the method and stops.
+license: MIT
 ---
 
 # The inverse-set Kondo
@@ -77,3 +78,7 @@ that guesses at one item's purpose has quietly kept or deleted it for no reason.
 
 Propose the deletions; do not carry them out until the person agrees. Deleting is the
 one step here that is hard to take back.
+
+---
+
+Created by [Exagrow AI Consulting](https://exagrow.com). Provided under the MIT License.

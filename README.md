@@ -33,3 +33,17 @@ the workshop. What is here is the groundwork:
 2. A personal laptop, or a work laptop where you have local admin rights.
 
 We will take it from there together in the room.
+
+## License
+
+Everything in this repository is under the MIT License: the skills, `CLAUDE.md`, `PLAN.md`,
+and the design system. Use it, change it, and build your own dashboard on it, at work
+included. The terms are in [LICENSE.md](LICENSE.md).
+
+Three things are outside that, because they are not in this repository:
+
+- **Your data.** Whatever you put in `data/raw/` stays yours, or its publisher's. The
+  workshop's trip data is New York City's.
+- **The fonts and icons the design system names.** Inter, JetBrains Mono, and Lucide are
+  not bundled here. Each comes under its own open license from its own source.
+- **The Exagrow name and logo.** The license covers the files, not the brand.

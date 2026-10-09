@@ -1,6 +1,7 @@
 ---
 name: closed-loop-visual-feedback
 description: Build anything visual by rendering it and actually looking at it, the way the person who uses it will, then iterating until it is both correct and pleasing. Use whenever making or changing something graphical (an SVG or diagram, a dashboard, a web app or page, a static site, a chart, an illustration), and before ever calling such a thing done. Triggers on "draw a diagram", "make an SVG", "build the dashboard", "does this look right", "redraw", "the layout is off", and on any moment you are about to ship a visual you have not seen.
+license: MIT
 ---
 
 # Closed-loop visual feedback
@@ -108,3 +109,7 @@ This loop is the evidence for the others in the set.
 Draft, render, look, fix, render again. Say what you actually saw rather than that it
 should be fine. When you hand the work over, it should be because you looked at it and it
 was right, not because you ran out of edits.
+
+---
+
+Created by [Exagrow AI Consulting](https://exagrow.com). Provided under the MIT License.

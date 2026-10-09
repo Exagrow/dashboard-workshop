@@ -1,6 +1,7 @@
 ---
 name: ux-heuristics
 description: Inspect a screen, flow or dashboard against Jakob Nielsen's ten usability heuristics and report the violations by severity. Use when someone asks for a heuristic evaluation or a usability review, says "run the heuristics", "check this against Nielsen", "what is wrong with this screen", or when the jobs-quote-ux skill needs a systematic pass over a real interface. Needs a rendered interface to look at; with none, it says so and stops.
+license: MIT
 ---
 
 # Usability heuristics
@@ -68,3 +69,7 @@ person experiences, the severity, and the smallest fix. Order by severity, highe
 
 Do not force a finding for every heuristic. Say which ones the screen passes and move on.
 If the screen passes all ten, say so plainly and stop.
+
+---
+
+Created by [Exagrow AI Consulting](https://exagrow.com). Provided under the MIT License.

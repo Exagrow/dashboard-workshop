@@ -1,6 +1,7 @@
 ---
 name: jobs-quote-ux
 description: Test a design against the user-experience-first standard, naming the person first and working backward from what they are trying to accomplish to the technology. Use when someone asks whether a flow, screen, dashboard, skill, process or error message is actually any good for the people who use it, or says "apply the Jobs standard", "work backwards from the user", "critique this UX", "is this the right experience", "does this pass". With no target named, it reports the quote and stops.
+license: MIT
 ---
 
 # The user-experience-first standard
@@ -70,3 +71,7 @@ Say what the person needs, what the design currently makes them do instead, and 
 smallest change that closes the gap. If the honest answer is that the design already
 passes, say so plainly and stop; inventing a critique to fill the template is its own
 failure of the standard.
+
+---
+
+Created by [Exagrow AI Consulting](https://exagrow.com). Provided under the MIT License.
